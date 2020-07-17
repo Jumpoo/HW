@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name" translatable="false">HW</string>
+    <string name="canada_horizontal" translatable="false">Canada HORIZONTAL</string>
+    <string name="canada_portrait" translatable="false">Canada</string>
+    <string name="germany_horizontal" translatable="false">Germany HORIZONTAL</string>
+    <string name="germany_portrait" translatable="false">Germany</string>
+    <string name="italy_horizontal" translatable="false">Italy HORIZONTAL</string>
+    <string name="italy_portrait" translatable="false">Italy</string>
+</resources>
