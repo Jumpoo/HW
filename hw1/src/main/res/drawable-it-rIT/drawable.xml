@@ -5,9 +5,9 @@
             xmlns:android="http://schemas.android.com/apk/res/android">
             <gradient
                 android:angle="0"
-                android:startColor="#F3F0EF"
-                android:centerColor="#F44336"
-                android:endColor="#4CAF50"/>
+                android:startColor="@color/green"
+                android:centerColor="@color/white"
+                android:endColor="@color/red"/>
         </shape>
     </item>
 </selector>

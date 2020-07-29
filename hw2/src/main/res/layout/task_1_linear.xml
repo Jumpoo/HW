@@ -21,14 +21,16 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/folder"
+            android:contentDescription="@string/attractions"
+            android:src="@drawable/attractions"
             android:padding="20dp" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/attractions"
             android:gravity="bottom"
-            android:paddingLeft="2dp"
+            android:paddingStart="2dp"
+            android:paddingEnd="0dp"
             android:paddingTop="25dp" />
     </LinearLayout>
 
@@ -40,13 +42,15 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/dining"
             android:src="@drawable/dining"
             android:padding="20dp" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/dining"
-            android:paddingLeft="2dp"
+            android:paddingStart="2dp"
+            android:paddingEnd="0dp"
             android:paddingTop="25dp" />
         </LinearLayout>
 
@@ -58,13 +62,15 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/education"
             android:src="@drawable/education"
             android:padding="20dp" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/education"
-            android:paddingLeft="2dp"
+            android:paddingStart="2dp"
+            android:paddingEnd="0dp"
             android:paddingTop="25dp" />
     </LinearLayout>
 
@@ -76,13 +82,15 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/family"
             android:src="@drawable/family"
             android:padding="20dp" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/family"
-            android:paddingLeft="2dp"
+            android:paddingStart="2dp"
+            android:paddingEnd="0dp"
             android:paddingTop="25dp" />
     </LinearLayout>
 
@@ -94,13 +102,15 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/health"
             android:src="@drawable/health"
             android:padding="20dp" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/health"
-            android:paddingLeft="2dp"
+            android:paddingStart="2dp"
+            android:paddingEnd="0dp"
             android:paddingTop="25dp" />
     </LinearLayout>
 
@@ -112,13 +122,15 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/office"
             android:src="@drawable/office"
             android:padding="20dp" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/office"
-            android:paddingLeft="2dp"
+            android:paddingStart="2dp"
+            android:paddingEnd="0dp"
             android:paddingTop="25dp" />
     </LinearLayout>
 
@@ -130,13 +142,15 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/promotions"
             android:src="@drawable/promotions"
             android:padding="20dp" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/promotions"
-            android:paddingLeft="2dp"
+            android:paddingStart="2dp"
+            android:paddingEnd="0dp"
             android:paddingTop="25dp" />
     </LinearLayout>
 
@@ -148,13 +162,15 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/radio"
             android:src="@drawable/radio"
             android:padding="20dp" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/radio"
-            android:paddingLeft="2dp"
+            android:paddingStart="2dp"
+            android:paddingEnd="0dp"
             android:paddingTop="25dp" />
     </LinearLayout>
 
@@ -166,13 +182,15 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/recipes"
             android:src="@drawable/recipes"
             android:padding="20dp" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/recipes"
-            android:paddingLeft="2dp"
+            android:paddingStart="2dp"
+            android:paddingEnd="0dp"
             android:paddingTop="25dp" />
     </LinearLayout>
 
@@ -184,13 +202,15 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/sports"
             android:src="@drawable/sports"
             android:padding="20dp" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/sports"
-            android:paddingLeft="2dp"
+            android:paddingStart="2dp"
+            android:paddingEnd="0dp"
             android:paddingTop="25dp" />
     </LinearLayout>
 
