@@ -19,4 +19,29 @@
     <string name="description">Description</string>
     <string name="inventory">Inventory</string>
     <string name="weight">Weight</string>
+
+    <string name="sign_in">Sign in</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="remember">Remember</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="just_sign_in">* Just sign in</string>
+
+    <string name="android">Android</string>
+    <string name="posts">\t125\nPosts</string>
+    <string name="followers">\t\t\t20K\nFollowers</string>
+    <string name="following">\t\t\t\t22\nFollowing</string>
+    <string name="username">Username</string>
+    <string name="address_description">Address\nDescription</string>
+    <string name="directions">DIRECTIONS</string>
+    <string name="call">CALL</string>
+    <string name="save">SAVE</string>
+    <string name="website">WEBSITE</string>
+
+    <string name="certificated">Certificated</string>
+    <string name="android_course">Android course</string>
+    <string name="layouts">Layouts</string>
+    <string name="views">Views</string>
+
+
 </resources>
