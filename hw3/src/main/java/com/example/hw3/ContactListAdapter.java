@@ -44,7 +44,7 @@ public  class ContactListAdapter extends RecyclerView.Adapter<ContactListAdapter
 
     public void addItem(Contact contact) {
         items.add(contact);
-        notifyItemChanged(items.indexOf(contact));
+        notifyDataSetChanged();
     }
 
     public void removeItem(Contact contact) {

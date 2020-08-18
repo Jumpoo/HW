@@ -14,8 +14,33 @@
         app:layout_constraintStart_toStartOf="parent"
         android:background="@color/blue"/>
 
+    <ImageView
+        android:id="@+id/back_arrow"
+        android:src="@drawable/back"
+        android:contentDescription="@string/back"
+        android:tint="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="@id/toolbar"
+        app:layout_constraintBottom_toBottomOf="@id/toolbar"
+        android:layout_marginStart="35dp"/>
+
+    <TextView
+        android:id="@+id/edit_contact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/toolbar"
+        app:layout_constraintStart_toEndOf="@id/back_arrow"
+        app:layout_constraintBottom_toBottomOf="@id/toolbar"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:text="@string/add_email_contact"
+        android:layout_marginStart="50dp"/>
+
     <RadioButton
         android:id="@+id/phone_number_button"
+        android:clickable="false"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"

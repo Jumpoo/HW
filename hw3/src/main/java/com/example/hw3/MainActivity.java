@@ -1,5 +1,6 @@
 package com.example.hw3;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -12,7 +13,6 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -26,13 +26,15 @@ public class MainActivity extends AppCompatActivity implements ContactListAdapte
     private FloatingActionButton addEmail;
     private boolean clicked = false;
 
-    private TextView line1;
-    private  TextView line2;
     private EditText search;
     private List <Contact> mItems = new ArrayList<>();
     private ContactListAdapter mAdapter = new ContactListAdapter(mItems, this);
-
     private RecyclerView recyclerView;
+
+    private Contact contact;
+    private Contact contactForPhoneUpdate;
+    private Contact contactForEmailUpdate;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -42,13 +44,12 @@ public class MainActivity extends AppCompatActivity implements ContactListAdapte
         add = findViewById(R.id.add_contact_button);
         addPhoneNumber = findViewById(R.id.add_phone_button);
         addEmail = findViewById(R.id.add_email_button);
-        line1 = findViewById(R.id.item_line_1);
-        line2 = findViewById(R.id.item_line_2);
         search = findViewById(R.id.search);
 
         recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setAdapter(mAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, false));
+
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,6 +74,7 @@ public class MainActivity extends AppCompatActivity implements ContactListAdapte
             }
         });
 
+//        Search start ----------------------------------------------------------------------------------
         search.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -96,6 +98,7 @@ public class MainActivity extends AppCompatActivity implements ContactListAdapte
         }
         mAdapter.filterList(filteredList);
     }
+//         Search end -------------------------------------------------------------------------------------
 
     private void updateVisibility() {
         clicker(clicked);
@@ -125,9 +128,7 @@ public class MainActivity extends AppCompatActivity implements ContactListAdapte
     @Override
     public void onItemClick(int position) {
         Intent intent = new Intent(this, EditContact.class);
-        intent.putExtra("POSITION", mItems.get(position));
-//        intent.putExtra("LINE_1", line1.getText().toString());  Из-за этих строк закрывается приложение, если нажать на контакт в списке
-//        intent.putExtra("LINE_2", line2.getText().toString());  Из-за этих строк закрывается приложение, если нажать на контакт в списке
+        intent.putExtra("ITEM", mItems.get(position));
         startActivityForResult(intent, 30);
     }
 
@@ -138,23 +139,30 @@ public class MainActivity extends AppCompatActivity implements ContactListAdapte
         if (requestCode == 10 && resultCode == Activity.RESULT_OK && data != null) {
             String addedName = data.getStringExtra("ADD_NAME");
             String addedPhoneNumber = data.getStringExtra("ADD_PHONE_NUMBER");
-
-            ContactListAdapter adapter = (ContactListAdapter) recyclerView.getAdapter();
-            adapter.addItem(new Contact(R.drawable.phone_icon, addedName, addedPhoneNumber));
+            mAdapter.addItem(new Contact(R.drawable.phone_icon, addedName, addedPhoneNumber));
 
         } else if (requestCode == 20 && resultCode == Activity.RESULT_OK && data != null) {
             String addedName = data.getStringExtra("ADD_NAME_E");
             String addedEmail = data.getStringExtra("ADD_EMAIL");
+            mAdapter.addItem(new Contact(R.drawable.email_icon, addedName, addedEmail));
+        }
 
-            ContactListAdapter adapter = (ContactListAdapter) recyclerView.getAdapter();
-            adapter.addItem(new Contact(R.drawable.email_icon, addedName, addedEmail));
+        if (requestCode == 30 && resultCode == Activity.RESULT_OK && data != null) {
+            contact = (Contact) data.getSerializableExtra("ITEM FOR REMOVE");
+            contactForPhoneUpdate = (Contact) data.getSerializableExtra("UPDATED_PHONE_CONTACT");
+            contactForEmailUpdate = (Contact) data.getSerializableExtra("UPDATED_EMAIL_CONTACT");
 
-        } else if (requestCode == 30 && resultCode == Activity.RESULT_OK && data != null) {
-            String updatedLine1 = data.getStringExtra("UPDATED_LINE_1");
-            String updatedLine2 = data.getStringExtra("UPDATED_LINE_2");
+            if (contact != null && contactForPhoneUpdate == null && contactForEmailUpdate == null) {
+                mAdapter.removeItem(contact);
 
-            ContactListAdapter adapter = (ContactListAdapter) recyclerView.getAdapter();
-            adapter.addItem(new Contact(R.drawable.phone_icon, updatedLine1, updatedLine2));
+            } else if (contact != null && contactForPhoneUpdate != null && contactForEmailUpdate == null) {
+                mAdapter.removeItem(contact);
+                mAdapter.addItem(contactForPhoneUpdate);
+
+            } else if (contact != null && contactForPhoneUpdate == null && contactForEmailUpdate != null) {
+                mAdapter.removeItem(contact);
+                mAdapter.addItem(contactForEmailUpdate);
+            }
         }
     }
 }

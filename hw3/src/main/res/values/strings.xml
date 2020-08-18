@@ -4,10 +4,17 @@
     <string name="empty_search_hint"> </string>
     <string name="line_1">Line 1</string>
     <string name="line_2">Line 2</string>
-    <string name="phone_number">Phone number</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="type_new_phone_number">Type New Phone Number</string>
     <string name="email">Email</string>
+    <string name="type_new_email">Type New Email</string>
     <string name="name">Name</string>
+    <string name="type_new_name">Type New Name</string>
     <string name="remove">Remove</string>
+    <string name="back">Back</string>
     <string name="add">Add</string>
     <string name="update">Update</string>
+    <string name="edit_contact">Edit Contact</string>
+    <string name="add_phone_contact">Add Phone Contact</string>
+    <string name="add_email_contact">Add Email Contact</string>
 </resources>

@@ -14,15 +14,12 @@
         android:textStyle="bold"
         android:textColor="@color/black"
         android:layout_marginTop="50dp"
-        android:layout_marginBottom="0dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="0dp"/>
+        android:layout_marginStart="40dp"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_marginBottom="0dp"
         android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"
         android:background="@drawable/edit_text_background"
@@ -35,7 +32,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_marginBottom="0dp"
         android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"
         android:background="@drawable/edit_text_background"
@@ -53,17 +49,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:layout_marginBottom="0dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginEnd="0dp"/>
+            android:layout_marginStart="40dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:layout_marginBottom="0dp"
             android:layout_marginStart="10dp"
-            android:layout_marginEnd="0dp"
             android:text="@string/remember"
             android:fontFamily="sans-serif-condensed"
             android:textSize="15sp"
@@ -74,7 +66,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:layout_marginBottom="0dp"
             android:layout_marginStart="110dp"
             android:layout_marginEnd="40dp"
             android:text="@string/forgot_password"
@@ -88,7 +79,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="220dp"
-        android:layout_marginBottom="0dp"
         android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"
         android:background="@drawable/button_background"
@@ -105,7 +95,6 @@
         android:fontFamily="sans-serif-condensed"
         android:textSize="20sp"
         android:layout_marginTop="70dp"
-        android:layout_marginBottom="0dp"
         android:gravity="center_horizontal"/>
 
 </LinearLayout>

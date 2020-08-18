@@ -11,7 +11,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="30dp"
-        android:layout_marginBottom="0dp"
         android:layout_marginStart="30dp"
         android:text="@string/android"
         android:textSize="30sp"
@@ -26,12 +25,9 @@
         app:layout_constraintTop_toBottomOf="@id/android"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="15dp"
-        android:layout_marginBottom="0dp"
         android:layout_marginStart="30dp"
         android:paddingStart="100dp"
-        android:paddingEnd="0dp"
         android:paddingTop="100dp"
-        android:paddingBottom="0dp"
         android:background="@color/grey"/>
 
     <TextView
@@ -108,8 +104,6 @@
         android:layout_marginStart="30dp"
         android:paddingStart="33dp"
         android:paddingTop="33dp"
-        android:paddingEnd="0dp"
-        android:paddingBottom="0dp"
         android:background="@color/grey"/>
 
     <ImageView
@@ -122,8 +116,6 @@
         android:layout_marginTop="15dp"
         android:paddingStart="33dp"
         android:paddingTop="33dp"
-        android:paddingEnd="0dp"
-        android:paddingBottom="0dp"
         android:background="@color/grey"/>
 
     <ImageView
@@ -136,8 +128,6 @@
         android:layout_marginTop="15dp"
         android:paddingStart="33dp"
         android:paddingTop="33dp"
-        android:paddingEnd="0dp"
-        android:paddingBottom="0dp"
         android:background="@color/grey"/>
 
     <ImageView
@@ -150,8 +140,6 @@
         android:layout_marginTop="15dp"
         android:paddingStart="33dp"
         android:paddingTop="33dp"
-        android:paddingEnd="0dp"
-        android:paddingBottom="0dp"
         android:background="@color/grey"/>
 
     <ImageView
@@ -164,8 +152,6 @@
         android:layout_marginTop="15dp"
         android:paddingStart="33dp"
         android:paddingTop="33dp"
-        android:paddingEnd="0dp"
-        android:paddingBottom="0dp"
         android:background="@color/grey"/>
     <ImageView
         android:id="@+id/small_avatar_6"
@@ -177,8 +163,6 @@
         android:layout_marginTop="15dp"
         android:paddingStart="33dp"
         android:paddingTop="33dp"
-        android:paddingEnd="0dp"
-        android:paddingBottom="0dp"
         android:background="@color/grey"/>
 
     <TextView
@@ -244,8 +228,7 @@
         app:layout_constraintTop_toBottomOf="@id/directions"
         android:background="@color/grey"
         android:layout_marginTop="20dp"
-        android:paddingTop="2dp"
-        android:paddingBottom="0dp"/>
+        android:paddingTop="2dp"/>
 
     <ImageView
         android:id="@+id/avatar_copy_1"
@@ -256,9 +239,7 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="100dp"
         android:paddingStart="90dp"
-        android:paddingEnd="0dp"
         android:paddingTop="90dp"
-        android:paddingBottom="0dp"
         android:background="@color/grey"/>
 
     <ImageView
@@ -271,9 +252,7 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="100dp"
         android:paddingStart="90dp"
-        android:paddingEnd="0dp"
         android:paddingTop="90dp"
-        android:paddingBottom="0dp"
         android:background="@color/grey"/>
 
     <ImageView
@@ -285,9 +264,7 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="100dp"
         android:paddingStart="90dp"
-        android:paddingEnd="0dp"
         android:paddingTop="90dp"
-        android:paddingBottom="0dp"
         android:background="@color/grey"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
