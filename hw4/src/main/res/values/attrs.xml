@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomView">
+        <attr name="radius_for_small_circle" format="dimension"/>
+        <attr name="radius_for_big_circle" format="dimension"/>
+        <attr name="purple_circle" format="color"/>
+        <attr name="green_arc" format="color"/>
+        <attr name="yellow_arc" format="color"/>
+        <attr name="blue_arc" format="color"/>
+        <attr name="red_arc" format="color"/>
+        <attr name="orange_change" format="color"/>
+        <attr name="black_change" format="color"/>
+    </declare-styleable>
+</resources>

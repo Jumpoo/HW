@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="radius_for_small_circle">50dp</dimen>
+    <dimen name="radius_for_big_circle">400dp</dimen>
+</resources>

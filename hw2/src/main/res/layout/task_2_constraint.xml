@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/photo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/photo"
+        android:textSize="45sp"
+        android:background="@color/grey"
+        android:gravity="center"
+        android:padding="60dp"/>
+
+    <ImageView
+        android:id="@+id/photo_icon"
+        android:contentDescription="@string/photo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/photo"
+        app:layout_constraintRight_toRightOf="@id/photo"
+        android:src="@drawable/photo"
+        android:tint="@color/white"
+        android:padding="15dp"/>
+
+    <EditText
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/title"
+        app:layout_constraintTop_toBottomOf="@id/photo"
+        android:layout_margin="15dp"/>
+
+    <EditText
+        android:id="@+id/price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        android:text="@string/price"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="270dp"/>
+
+    <EditText
+        android:id="@+id/location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        android:text="@string/location"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginEnd="15dp"/>
+
+    <ImageView
+        android:id="@+id/location_icon"
+        android:contentDescription="@string/location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/location"
+        app:layout_constraintRight_toRightOf="@id/location"
+        android:src="@drawable/location"/>
+
+    <EditText
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/price"
+        android:layout_marginTop="50dp"
+        android:text="@string/description"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"/>
+
+    <EditText
+        android:id="@+id/inventory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/description"
+        android:text="@string/inventory"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="270dp"/>
+
+    <EditText
+        android:id="@+id/weight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/description"
+        android:text="@string/weight"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="260dp"
+        android:layout_marginEnd="15dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
