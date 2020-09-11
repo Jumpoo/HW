@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/viewToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/blue"/>
+
+    <ImageView
+        android:id="@+id/viewBackArrow"
+        android:src="@drawable/back"
+        android:contentDescription="@string/back"
+        app:tint="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/viewToolbar"
+        app:layout_constraintStart_toStartOf="@id/viewToolbar"
+        app:layout_constraintBottom_toBottomOf="@id/viewToolbar"
+        android:layout_marginStart="35dp"/>
+
+    <TextView
+        android:id="@+id/viewEditContact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/viewToolbar"
+        app:layout_constraintStart_toEndOf="@id/viewBackArrow"
+        app:layout_constraintBottom_toBottomOf="@id/viewToolbar"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:text="@string/edit_contact"
+        android:layout_marginStart="50dp"/>
+
+    <TextView
+        android:id="@+id/viewNameHeading"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/viewToolbar"
+        app:layout_constraintBottom_toTopOf="@id/viewName"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/name"
+        android:textSize="15sp"
+        android:textColor="@color/blue"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="15dp"/>
+
+    <EditText
+        android:id="@+id/viewName"
+        android:inputType="text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/viewPhoneNumber"
+        app:layout_constraintTop_toTopOf="@id/viewToolbar"
+        android:hint="@string/type_new_name"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="60dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="35dp"/>
+
+    <TextView
+        android:id="@+id/viewPhoneHeading"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/viewName"
+        app:layout_constraintBottom_toTopOf="@id/viewPhoneNumber"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/phone_number"
+        android:textSize="15sp"
+        android:textColor="@color/blue"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="35dp"/>
+
+    <EditText
+        android:id="@+id/viewPhoneNumber"
+        android:inputType="phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/viewEmail"
+        app:layout_constraintTop_toBottomOf="@id/viewName"
+        android:hint="@string/type_new_phone_number"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="35dp"/>
+
+    <TextView
+        android:id="@+id/viewEmailHeading"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/viewEmail"
+        app:layout_constraintTop_toBottomOf="@id/viewPhoneNumber"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/email"
+        android:textSize="15sp"
+        android:textColor="@color/blue"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="35dp"/>
+
+    <EditText
+        android:id="@+id/viewEmail"
+        android:inputType="textEmailAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/viewPhoneNumber"
+        app:layout_constraintBottom_toTopOf="@id/viewButtonUpdate"
+        android:hint="@string/type_new_email"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="35dp"/>
+
+    <Button
+        android:id="@+id/viewButtonUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/viewEmail"
+        app:layout_constraintBottom_toTopOf="@id/viewButtonRemove"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/white"
+        android:text="@string/update"
+        android:textSize="15sp"
+        android:background="@drawable/update_background"
+        android:layout_marginStart="70dp"
+        android:layout_marginEnd="70dp"/>
+
+    <Button
+        android:id="@+id/viewButtonRemove"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/viewButtonUpdate"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/white"
+        android:text="@string/remove"
+        android:textSize="15sp"
+        android:background="@drawable/remove_background"
+        android:layout_marginStart="70dp"
+        android:layout_marginEnd="70dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
