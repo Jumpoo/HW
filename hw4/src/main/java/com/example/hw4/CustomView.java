@@ -41,6 +41,9 @@ public class CustomView extends View {
     private int orangeColorForChange;
     private int blackColorForChange;
 
+    private int x;
+    private int y;
+
     public CustomView(Context context) {
         super(context);
     }
@@ -62,7 +65,6 @@ public class CustomView extends View {
             TypedArray typedArray = getContext().obtainStyledAttributes(attrs, R.styleable.CustomView);
             radiusForSmallCircle = typedArray.getDimensionPixelSize(R.styleable.CustomView_radius_for_small_circle, 0);
             purpleColorForSmallCircle = typedArray.getColor(R.styleable.CustomView_purple_circle, 0);
-//          В onDraw() не отнималось от centerOfWidth: radiusForBigCircle = typedArray.getDimensionPixelSize(R.styleable.CustomView_radius_for_big_circle, 0);
 
             greenColorForArc = typedArray.getColor(R.styleable.CustomView_green_arc, 0);
             yellowColorForArc = typedArray.getColor(R.styleable.CustomView_yellow_arc, 0);
@@ -76,25 +78,10 @@ public class CustomView extends View {
     }
 
     @Override
-    protected void onAttachedToWindow() {
-        super.onAttachedToWindow();
-    }
-
-    @Override
-    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-    }
-
-    @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
         centerOfWidth = w / 2;
         centerOfHeight = h / 2;
-    }
-
-    @Override
-    protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
-        super.onLayout(changed, left, top, right, bottom);
     }
 
     private void createRectFAndPaint(AttributeSet attrs) {
@@ -131,35 +118,63 @@ public class CustomView extends View {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
+        x = (int) event.getX();
+        y = (int) event.getY();
+
         if (event.getAction() == MotionEvent.ACTION_DOWN) {
             if (touchActionListener != null) {
-                touchActionListener.onTouchDown((int) event.getX(), (int) event.getY());
+                touchActionListener.onTouchDown(x, y);
             }
+            defineTouchPointAndChangeColor();
         }
         return super.onTouchEvent(event);
     }
 
-    public void touchYellowArc() {
+    private void defineTouchPointAndChangeColor() {
+        if (((Math.pow((x - getCenterOfWidth()), 2)) + (Math.pow((y - getCenterOfHeight()), 2)) <=
+                Math.pow(getRadiusForBigCircle(), 2)) &&
+
+                ((Math.pow((x - getCenterOfWidth()), 2)) + (Math.pow((y - getCenterOfHeight()), 2)) >
+                        Math.pow(getRadiusForSmallCircle(), 2))) {
+
+            if (x > getCenterOfWidth() && y > getCenterOfHeight()) {
+                touchYellowArc();
+            } else if (x < getCenterOfWidth() && y > getCenterOfHeight()) {
+                touchBlueArc();
+            } else if (x < getCenterOfWidth() && y < getCenterOfHeight()) {
+                touchRedArc();
+            } else if (x > getCenterOfWidth() && y < getCenterOfHeight()) {
+                touchGreenArc();
+            }
+        }
+
+        if ( (Math.pow((x - getCenterOfWidth()), 2)) + (Math.pow((y - getCenterOfHeight()), 2)) <
+                Math.pow(getRadiusForSmallCircle(), 2) )  {
+            touchPurpleSmallCircle();
+        }
+    }
+
+    private void touchYellowArc() {
         paintForYellowArc.setColor(orangeColorForChange);
         invalidate();
     }
 
-    public void touchBlueArc() {
+    private void touchBlueArc() {
         paintForBlueArc.setColor(orangeColorForChange);
         invalidate();
     }
 
-    public void touchRedArc() {
+    private void touchRedArc() {
         paintForRedArc.setColor(orangeColorForChange);
         invalidate();
     }
 
-    public void touchGreenArc() {
+    private void touchGreenArc() {
         paintForGreenArc.setColor(orangeColorForChange);
         invalidate();
     }
 
-    public void touchPurpleSmallCircle() {
+    private void touchPurpleSmallCircle() {
         paintForYellowArc.setColor(blackColorForChange);
         paintForBlueArc.setColor(blackColorForChange);
         paintForRedArc.setColor(blackColorForChange);
@@ -171,19 +186,19 @@ public class CustomView extends View {
         this.touchActionListener = touchActionListener;
     }
 
-    public int getCenterOfWidth() {
+    private int getCenterOfWidth() {
         return centerOfWidth;
     }
 
-    public int getCenterOfHeight() {
+    private int getCenterOfHeight() {
         return centerOfHeight;
     }
 
-    public int getRadiusForSmallCircle() {
+    private int getRadiusForSmallCircle() {
         return radiusForSmallCircle;
     }
 
-    public int getRadiusForBigCircle() {
+    private int getRadiusForBigCircle() {
         return radiusForBigCircle;
     }
 }

@@ -41,57 +41,20 @@ public class MainActivity extends AppCompatActivity {
                 } else if (checkToast != null) {
                     Toast.makeText(MainActivity.this, "X: " + x + " Y: " + y, Toast.LENGTH_LONG).show();
                 }
-
-//               Такие формулы радиуса окружности не работали:
-//
-//               if ( (Math.pow((x - customView.getCenterOfWidth()), 2)) +
-//               (Math.pow((y - customView.getCenterOfHeight()), 2)) ==
-//                        Math.pow(customView.getRadiusForBigCircle(), 2) )
-
-//               if ( (Math.pow(customView.getRadiusForBigCircle(), 2) == (Math.pow(x, 2)) - 2 * x * customView.getCenterOfWidth() +
-//                        (Math.pow(customView.getCenterOfWidth(), 2)) + (Math.pow(y, 2)) - 2 * y * customView.getCenterOfHeight() +
-//                        (Math.pow(customView.getCenterOfHeight(), 2))) )
-
-                if (x >= customView.getCenterOfWidth() + customView.getRadiusForSmallCircle() &&
-                        y >= customView.getCenterOfHeight() + customView.getRadiusForSmallCircle() &&
-                        x <= customView.getCenterOfWidth() + customView.getRadiusForBigCircle() &&
-                        y <= customView.getCenterOfHeight() + customView.getRadiusForBigCircle()) {
-                    customView.touchYellowArc();
-                } else if (x <= customView.getCenterOfWidth() - customView.getRadiusForSmallCircle() &&
-                        y >= customView.getCenterOfHeight() + customView.getRadiusForSmallCircle() &&
-                        x >= customView.getCenterOfWidth() - customView.getRadiusForBigCircle() &&
-                        y <= customView.getCenterOfHeight() + customView.getRadiusForBigCircle()) {
-                    customView.touchBlueArc();
-                } else if (x <= customView.getCenterOfWidth() - customView.getRadiusForSmallCircle() &&
-                        y <= customView.getCenterOfHeight() + customView.getRadiusForSmallCircle() &&
-                        x >= customView.getCenterOfWidth() - customView.getRadiusForBigCircle() &&
-                        y >= customView.getCenterOfHeight() - customView.getRadiusForBigCircle()) {
-                    customView.touchRedArc();
-                } else if (x >= customView.getCenterOfWidth() + customView.getRadiusForSmallCircle() &&
-                        y <= customView.getCenterOfHeight() - customView.getRadiusForSmallCircle() &&
-                        x <= customView.getCenterOfWidth() + customView.getRadiusForBigCircle() &&
-                        y >= customView.getCenterOfHeight() - customView.getRadiusForBigCircle()) {
-                    customView.touchGreenArc();
-                } else if (x <= customView.getCenterOfWidth() + customView.getRadiusForSmallCircle() &&
-                        x >= customView.getCenterOfWidth() - customView.getRadiusForSmallCircle() &&
-                        y >= customView.getCenterOfHeight() - customView.getRadiusForSmallCircle() &&
-                        y <= customView.getCenterOfHeight() + customView.getRadiusForSmallCircle()) {
-                    customView.touchPurpleSmallCircle();
-                }
             }
         });
     }
 
-    private void startSwitcher() {
-        startActivityForResult(Switcher.intentForSwitcher(this), 10);
+    private void startPreferenceActivity() {
+        startActivityForResult(Preference.intentForPreferenceActivity(this), 10);
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 10 && resultCode == Activity.RESULT_OK && data != null) {
-            checkSnackbar = data.getStringExtra(Switcher.SNACKBAR);
-            checkToast = data.getStringExtra(Switcher.TOAST);
+            checkSnackbar = data.getStringExtra(Preference.SNACKBAR);
+            checkToast = data.getStringExtra(Preference.TOAST);
         }
     }
 
@@ -104,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
        itemIdInMenu = item.getItemId();
-        if (itemIdInMenu == R.id.switcher) {
+        if (itemIdInMenu == R.id.choose_preference) {
             showConfirmationDialog();
         }
         return super.onOptionsItemSelected(item);
@@ -117,9 +80,9 @@ public class MainActivity extends AppCompatActivity {
                 .setPositiveButton((R.string.alert_dialog_positive_button), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                startSwitcher();
+                startPreferenceActivity();
             }
-        })
+                })
                 .setNegativeButton((R.string.alert_dialog_negative_button), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {

@@ -17,7 +17,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-public class Switcher extends AppCompatActivity {
+public class Preference extends AppCompatActivity {
     public static final String SNACKBAR = "SNACKBAR";
     public static final String TOAST = "TOAST";
 
@@ -27,17 +27,16 @@ public class Switcher extends AppCompatActivity {
     private Button buttonSave;
     private Toolbar toolbar;
     private ActionBar actionBar;
-    private SharedPreferences snackbarPreference;
-    private SharedPreferences toastPreference;
+    private SharedPreferences preference;
 
-    public static Intent intentForSwitcher(Context context) {
-        return new Intent(context, Switcher.class);
+    public static Intent intentForPreferenceActivity(Context context) {
+        return new Intent(context, Preference.class);
     }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_switcher);
+        setContentView(R.layout.activity_preference);
 
         radioButtonSnackbarOn = findViewById(R.id.view_radio_button_snackbar_on);
         radioButtonToastOn = findViewById(R.id.view_radio_button_toast_on);
@@ -56,11 +55,7 @@ public class Switcher extends AppCompatActivity {
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (radioGroup.getId() == R.id.view_radio_button_snackbar_on) {
-                    saveSnackbarPreference();
-                } else {
-                    saveToastPreference();
-                }
+                savePreference();
             }
         });
 
@@ -88,27 +83,21 @@ public class Switcher extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void saveSnackbarPreference() {
-        snackbarPreference = getPreferences(Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = snackbarPreference.edit();
+    private void savePreference() {
+        preference = getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preference.edit();
         editor.putString(SNACKBAR, "");
-        editor.apply();
-    }
-
-    private void saveToastPreference() {
-        toastPreference = getPreferences(Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = toastPreference.edit();
         editor.putString(TOAST, "");
         editor.apply();
     }
 
     private String loadSnackbarPreference() {
-        snackbarPreference = getPreferences(Context.MODE_PRIVATE);
-        return snackbarPreference.getString(SNACKBAR, null);
+        preference = getPreferences(Context.MODE_PRIVATE);
+        return preference.getString(SNACKBAR, null);
     }
 
     private String loadToastPreference() {
-        toastPreference = getPreferences(Context.MODE_PRIVATE);
-        return toastPreference.getString(TOAST, null);
+        preference = getPreferences(Context.MODE_PRIVATE);
+        return preference.getString(TOAST, null);
     }
 }
