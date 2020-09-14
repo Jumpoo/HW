@@ -1,5 +1,6 @@
+include ':hw4'
+include ':hw3'
 include ':hw2'
-include ':hw2_1_1'
 include ':hw1'
 include ':app'
 rootProject.name = "HW1"

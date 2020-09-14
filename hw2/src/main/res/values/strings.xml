@@ -1,3 +1,47 @@
 <resources>
     <string name="app_name">HW2</string>
+    <string name="poi">POI</string>
+    <string name="attractions">Attractions</string>
+    <string name="dining">Dining</string>
+    <string name="education">Education</string>
+    <string name="family">Family</string>
+    <string name="health">Health</string>
+    <string name="office">Office</string>
+    <string name="promotions">Promotions</string>
+    <string name="radio">Radio</string>
+    <string name="recipes">Recipes</string>
+    <string name="sports">Sports</string>
+
+    <string name="photo">PHOTO</string>
+    <string name="title">Title</string>
+    <string name="price">Price</string>
+    <string name="location">Location</string>
+    <string name="description">Description</string>
+    <string name="inventory">Inventory</string>
+    <string name="weight">Weight</string>
+
+    <string name="sign_in">Sign in</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="remember">Remember</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="just_sign_in">* Just sign in</string>
+
+    <string name="android">Android</string>
+    <string name="posts">\t125\nPosts</string>
+    <string name="followers">\t\t\t20K\nFollowers</string>
+    <string name="following">\t\t\t\t22\nFollowing</string>
+    <string name="username">Username</string>
+    <string name="address_description">Address\nDescription</string>
+    <string name="directions">DIRECTIONS</string>
+    <string name="call">CALL</string>
+    <string name="save">SAVE</string>
+    <string name="website">WEBSITE</string>
+
+    <string name="certificated">Certificated</string>
+    <string name="android_course">Android course</string>
+    <string name="layouts">Layouts</string>
+    <string name="views">Views</string>
+
+
 </resources>

@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">HW4</string>
+    <string name="choose_preference">Choose Preference</string>
+    <string name="snackbar_on">Snackbar On and Toast Off</string>
+    <string name="toast_on">Toast On and Snackbar Off</string>
+    <string name="save">Save</string>
+    <string name="alert_dialog_title">WAIT!</string>
+    <string name="alert_dialog_message">Do You Really Want To Choose Preference?</string>
+    <string name="alert_dialog_positive_button">Can\'t Wait</string>
+    <string name="alert_dialog_negative_button">No Way</string>
+</resources>
